@@ -292,10 +292,10 @@ class Vanagon
 
       # Adds action to run during the preinstall phase of packaging
       #
+      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
       # @param pkg_state [Array] the state in which the scripts should execute. Can be
       #   one or multiple of 'install' and 'upgrade'.
-      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
-      def add_preinstall_action(pkg_state, scripts)
+      def add_preinstall_action(scripts, pkg_state = ['install', 'upgrade'])
         pkg_state = Array(pkg_state)
         scripts = Array(scripts)
 
@@ -307,10 +307,10 @@ class Vanagon
 
       # Adds action to run during the postinstall phase of packaging
       #
+      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
       # @param pkg_state [Array] the state in which the scripts should execute. Can be
       #   one or multiple of 'install' and 'upgrade'.
-      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
-      def add_postinstall_action(pkg_state, scripts)
+      def add_postinstall_action(scripts, pkg_state = ['install', 'upgrade'])
         pkg_state = Array(pkg_state)
         scripts = Array(scripts)
 
@@ -322,10 +322,10 @@ class Vanagon
 
       # Adds action to run during the preremoval phase of packaging
       #
+      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
       # @param pkg_state [Array] the state in which the scripts should execute. Can be
       #   one or multiple of 'removal' and 'upgrade'.
-      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
-      def add_preremove_action(pkg_state, scripts)
+      def add_preremove_action(scripts, pkg_state = ['removal', 'upgrade'])
         pkg_state = Array(pkg_state)
         scripts = Array(scripts)
 
@@ -337,10 +337,10 @@ class Vanagon
 
       # Adds action to run during the postremoval phase of packaging
       #
+      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
       # @param pkg_state [Array] the state in which the scripts should execute. Can be
       #   one or multiple of 'removal' and 'upgrade'.
-      # @param scripts [Array] the Bourne shell compatible scriptlet(s) to execute
-      def add_postremove_action(pkg_state, scripts)
+      def add_postremove_action(scripts, pkg_state = ['removal', 'upgrade'])
         pkg_state = Array(pkg_state)
         scripts = Array(scripts)
 
